@@ -3,28 +3,30 @@ import React from 'react';
 import Link from 'next/link';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
-export default function Home() {
+export default function BIPortfolioPage() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-black text-white">
-      {/* Menu lateral esquerdo */}
+      {/* Sidebar */}
       <aside className="w-full md:w-72 bg-neutral-900 p-6 md:p-8">
-        <div className="flex flex-col h-full items-center text-center">
-          <h1 className="text-2xl md:text-3xl font-bold mb-2">Vinicius Trindade</h1>
-          <p className="text-neutral-400 text-sm md:text-base mb-4">
-            Analista de Dados com forte atuação em Engenharia de Dados, especializado em BI,
-            automações com Python, SQL e construção de pipelines de dados para tomada de decisão.
-          </p>
+        <div className="flex flex-col h-full">
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4">Vinicius Trindade</h1>
+            <p className="text-neutral-400 text-sm md:text-base mb-4">
+              Analista de Dados com foco em Engenharia de Dados, especializado em BI,
+              automações com Python, SQL e construção de pipelines de dados.
+            </p>
 
-          <div className="flex space-x-4 mb-6">
-            <a href="https://github.com/ViniiTrindadee/" className="text-neutral-400 hover:text-white transition-colors">
-              <Github size={20} />
-            </a>
-            <a href="https://www.linkedin.com/in/vinicius-trindade-da-silva/" className="text-neutral-400 hover:text-white transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="mailto:viniciustrindadedasilva@gmail.com" className="text-neutral-400 hover:text-white transition-colors">
-              <Mail size={20} />
-            </a>
+            <div className="flex space-x-4 mb-6">
+              <a href="https://github.com/ViniiTrindadee/" className="text-neutral-400 hover:text-white transition-colors">
+                <Github size={20} />
+              </a>
+              <a href="https://www.linkedin.com/in/vinicius-trindade-da-silva/" className="text-neutral-400 hover:text-white transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="mailto:viniciustrindadedasilva@gmail.com" className="text-neutral-400 hover:text-white transition-colors">
+                <Mail size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </aside>
@@ -49,6 +51,27 @@ export default function Home() {
                 description: "Visualização de volume de chamados SAP para apoio na redução de backlog técnico.",
                 tools: ["Power BI", "Sharepoint"],
                 link: "/projects/project2"
+              },
+              {
+                image: "/voicero.png",
+                title: "Live Translator Bot",
+                description: "Projeto para monitoramento de uso de um bot de tradução de chamadas de voz em tempo real.",
+                tools: ["Power BI", "SQL"],
+                link: "/projects/project3"
+              },
+              {
+                image: "/xflow.png",
+                title: "Marketing Analytics",
+                description: "Análise de campanhas publicitárias usando métricas comuns para garantir performance de marketing.",
+                tools: ["Power BI", "Excel"],
+                link: "/projects/project4"
+              },
+              {
+                image: "/cot.png",
+                title: "Commitment of Traders",
+                description: "Visualização de variação de preço de mercado com base nos relatórios semanais dos traders.",
+                tools: ["Power BI", "SQL", "Python"],
+                link: "/projects/project5"
               }
             ].map((project) => (
               <div key={project.title} className="bg-neutral-900 p-4 md:p-6 rounded-lg flex flex-col">
@@ -73,7 +96,6 @@ export default function Home() {
                         'SQL': 'bg-red-900 text-red-300',
                         'Python': 'bg-blue-600 text-blue-100'
                       };
-
                       return (
                         <span
                           key={tool}
@@ -99,7 +121,6 @@ export default function Home() {
           <div className="mt-20 text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-8">🎓 Graduação</h2>
             <div className="flex flex-col md:flex-row justify-center items-center gap-12">
-              {/* Fatec */}
               <div className="flex flex-col items-center">
                 <img
                   src="/logo_fatec.jpg"
@@ -110,8 +131,6 @@ export default function Home() {
                   Formado em Gestão da<br />Tecnologia da Informação
                 </p>
               </div>
-
-              {/* PUC Minas */}
               <div className="flex flex-col items-center">
                 <img
                   src="/logo_puc.jpg"
