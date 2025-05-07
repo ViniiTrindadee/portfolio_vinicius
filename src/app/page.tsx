@@ -6,27 +6,26 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 export default function BIPortfolioPage() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-black text-white">
+      
       {/* Sidebar */}
       <aside className="w-full md:w-72 bg-neutral-900 p-6 md:p-8">
-        <div className="flex flex-col h-full">
-          <div>
-            <h1 className="text-2xl md:text-3xl font-bold mb-2 md:mb-4">Vinicius Trindade</h1>
-            <p className="text-neutral-400 text-sm md:text-base mb-4">
-              Analista de Dados com foco em Engenharia de Dados, especializado em BI,
-              automações com Python, SQL e construção de pipelines de dados.
-            </p>
+        <div className="flex flex-col h-full items-center text-center">
+          <h1 className="text-2xl md:text-3xl font-bold mb-2">Vinicius Trindade</h1>
+          <p className="text-neutral-400 text-sm md:text-base mb-4">
+            Analista de Dados com foco em Engenharia de Dados, especializado em BI,
+            automações com Python, SQL e construção de pipelines de dados.
+          </p>
 
-            <div className="flex space-x-4 mb-6">
-              <a href="https://github.com/ViniiTrindadee/" className="text-neutral-400 hover:text-white transition-colors">
-                <Github size={20} />
-              </a>
-              <a href="https://www.linkedin.com/in/vinicius-trindade-da-silva/" className="text-neutral-400 hover:text-white transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="mailto:viniciustrindadedasilva@gmail.com" className="text-neutral-400 hover:text-white transition-colors">
-                <Mail size={20} />
-              </a>
-            </div>
+          <div className="flex space-x-4 mb-6">
+            <a href="https://github.com/ViniiTrindadee/" className="text-neutral-400 hover:text-white transition-colors">
+              <Github size={20} />
+            </a>
+            <a href="https://www.linkedin.com/in/vinicius-trindade-da-silva/" className="text-neutral-400 hover:text-white transition-colors">
+              <Linkedin size={20} />
+            </a>
+            <a href="mailto:viniciustrindadedasilva@gmail.com" className="text-neutral-400 hover:text-white transition-colors">
+              <Mail size={20} />
+            </a>
           </div>
         </div>
       </aside>
@@ -34,10 +33,12 @@ export default function BIPortfolioPage() {
       {/* Conteúdo principal */}
       <main className="flex-1 p-6 md:p-12">
         <section className="max-w-7xl mx-auto">
-          <h1 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8">Power BI Reports Portfolio</h1>
+          <h1 className="text-2xl md:text-4xl font-bold mb-6 md:mb-10 text-center md:text-left">
+            Power BI Reports Portfolio
+          </h1>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[  
+            {[
               {
                 image: "/abb.png",
                 title: "Procurement IM&S PA Report",
@@ -55,21 +56,21 @@ export default function BIPortfolioPage() {
               {
                 image: "/voicero.png",
                 title: "Live Translator Bot",
-                description: "Projeto para monitoramento de uso de um bot de tradução de chamadas de voz em tempo real.",
+                description: "Projeto de visualização de uso do bot que traduz ligações de voz em tempo real.",
                 tools: ["Power BI", "SQL"],
                 link: "/projects/project3"
               },
               {
                 image: "/xflow.png",
                 title: "Marketing Analytics",
-                description: "Análise de campanhas publicitárias usando métricas comuns para garantir performance de marketing.",
+                description: "Análise de campanhas de mídia com indicadores de performance e investimento.",
                 tools: ["Power BI", "Excel"],
                 link: "/projects/project4"
               },
               {
                 image: "/cot.png",
                 title: "Commitment of Traders",
-                description: "Visualização de variação de preço de mercado com base nos relatórios semanais dos traders.",
+                description: "Dashboard com dados de mercado futuro (COT Report) para análise de tendência de preço.",
                 tools: ["Power BI", "SQL", "Python"],
                 link: "/projects/project5"
               }
@@ -118,45 +119,32 @@ export default function BIPortfolioPage() {
           </div>
 
           {/* Seção Graduação */}
-          <div className="mt-20 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">🎓 Graduação</h2>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-12">
-              <div className="flex flex-col items-center">
-                <img
-                  src="/logo_fatec.jpg"
-                  alt="Fatec"
-                  className="h-24 object-contain mb-2"
-                />
-                <p className="text-sm md:text-base text-center font-semibold">
-                  Formado em Gestão da<br />Tecnologia da Informação
-                </p>
-              </div>
-              <div className="flex flex-col items-center">
-                <img
-                  src="/logo_puc.jpg"
-                  alt="PUC Minas"
-                  className="h-24 object-contain mb-2"
-                />
-                <p className="text-sm md:text-base text-center font-semibold">
-                  Especialização em Engenharia<br />de Dados
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Disclaimer */}
-          <div className="mt-12">
+          <div className="mt-16">
             <section className="bg-neutral-900 rounded-lg p-4 md:p-6">
-              <h2 className="text-xl md:text-2xl font-semibold mb-2 md:mb-4">Disclaimer</h2>
-              <p className="text-neutral-400 text-sm md:text-base">
-                * Real projects developed entirely by me.
-              </p>
-              <p className="text-neutral-400 text-sm md:text-base">
-                ** The data has been anonymized and modified to ensure compliance with the LGPD.
-              </p>
-              <p className="text-neutral-400 text-sm md:text-base">
-                *** Unauthorized reproduction may result in legal implications.
-              </p>
+              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-white">🎓 Graduação</h2>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-12">
+                <div className="flex flex-col items-center">
+                  <img
+                    src="/logo_fatec.jpg"
+                    alt="Fatec"
+                    className="h-24 object-contain mb-2"
+                  />
+                  <p className="text-sm md:text-base text-center font-semibold text-neutral-300">
+                    Formado em Gestão da<br />Tecnologia da Informação
+                  </p>
+                </div>
+
+                <div className="flex flex-col items-center">
+                  <img
+                    src="/logo_puc.jpg"
+                    alt="PUC Minas"
+                    className="h-24 object-contain mb-2"
+                  />
+                  <p className="text-sm md:text-base text-center font-semibold text-neutral-300">
+                    Especialização em Engenharia<br />de Dados
+                  </p>
+                </div>
+              </div>
             </section>
           </div>
         </section>
