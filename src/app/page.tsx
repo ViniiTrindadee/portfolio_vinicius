@@ -5,8 +5,8 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function BIPortfolioPage() {
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-black text-white">
-      
+    <div className="flex flex-col md:flex-row min-h-screen bg-black text-white font-sans">
+
       {/* Sidebar */}
       <aside className="w-full md:w-72 bg-neutral-900 p-6 md:p-8">
         <div className="flex flex-col h-full items-center text-center">
@@ -15,7 +15,6 @@ export default function BIPortfolioPage() {
             Analista de Dados com foco em Engenharia de Dados, especializado em BI,
             automações com Python, SQL e construção de pipelines de dados.
           </p>
-
           <div className="flex space-x-4 mb-6">
             <a href="https://github.com/ViniiTrindadee/" className="text-neutral-400 hover:text-white transition-colors">
               <Github size={20} />
@@ -33,10 +32,37 @@ export default function BIPortfolioPage() {
       {/* Conteúdo principal */}
       <main className="flex-1 p-6 md:p-12">
         <section className="max-w-7xl mx-auto">
+
+          {/* Header com breadcrumb e metadados */}
+          <div className="flex flex-col md:flex-row justify-between items-center text-neutral-400 text-sm mb-8">
+            <Link href="/" className="hover:text-white text-blue-400 mb-2 md:mb-0">← Back to Dashboard</Link>
+            <div className="flex gap-4">
+              <span>Data classification: <strong className="text-white">Confidential</strong></span>
+              <span>Last update: 28/09/2023</span>
+            </div>
+          </div>
+
+          {/* KPIs */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            {[
+              { label: 'PR to PO', value: '99,68%' },
+              { label: 'PR to PO 1-2 BD', value: '84,78%' },
+              { label: 'Closed / On time', value: '83,48%' },
+              { label: 'IR pending', value: '6,54%' },
+            ].map((kpi) => (
+              <div key={kpi.label} className="bg-neutral-800 p-4 text-center rounded-lg shadow hover:shadow-lg transition">
+                <p className="text-2xl font-bold text-white">{kpi.value}</p>
+                <p className="text-sm text-neutral-400">{kpi.label}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Título */}
           <h1 className="text-2xl md:text-4xl font-bold mb-6 md:mb-10 text-center md:text-left">
             Power BI Reports Portfolio
           </h1>
 
+          {/* Cards de Projetos */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
@@ -75,18 +101,16 @@ export default function BIPortfolioPage() {
                 link: "/projects/project5"
               }
             ].map((project) => (
-              <div key={project.title} className="bg-neutral-900 p-4 md:p-6 rounded-lg flex flex-col">
-                <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg mb-4 hover:shadow-lg transition-shadow duration-300">
+              <div key={project.title} className="bg-neutral-900 p-4 md:p-6 rounded-lg flex flex-col transition-transform hover:-translate-y-1 hover:shadow-xl">
+                <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg mb-4 bg-neutral-800">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="absolute inset-0 w-full h-full object-contain bg-neutral-800"
+                    className="absolute inset-0 w-full h-full object-contain"
                   />
                 </div>
-                <h2 className="text-xl md:text-2xl font-semibold mb-2 md:mb-4">{project.title}</h2>
-                <p className="text-neutral-400 text-sm md:text-base mb-4 flex-grow">
-                  {project.description}
-                </p>
+                <h2 className="text-xl md:text-2xl font-semibold mb-2">{project.title}</h2>
+                <p className="text-neutral-400 text-sm md:text-base mb-4 flex-grow">{project.description}</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center mt-auto">
                   <div className="flex flex-wrap gap-2">
                     {project.tools.map((tool) => {
@@ -98,19 +122,13 @@ export default function BIPortfolioPage() {
                         'Python': 'bg-blue-600 text-blue-100'
                       };
                       return (
-                        <span
-                          key={tool}
-                          className={`${toolColors[tool] || 'bg-neutral-800 text-neutral-300'} px-2 py-1 rounded-full text-xs`}
-                        >
+                        <span key={tool} className={`${toolColors[tool] || 'bg-neutral-800 text-neutral-300'} px-2 py-1 rounded-full text-xs`}>
                           {tool}
                         </span>
                       );
                     })}
                   </div>
-                  <Link
-                    href={project.link}
-                    className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-2 rounded-full text-sm transition-colors shrink-0"
-                  >
+                  <Link href={project.link} className="bg-blue-800 hover:bg-blue-900 text-white px-4 py-2 rounded-full text-sm transition-colors">
                     See details
                   </Link>
                 </div>
@@ -124,22 +142,13 @@ export default function BIPortfolioPage() {
               <h2 className="text-xl md:text-2xl font-semibold mb-6 text-white">🎓 Graduação</h2>
               <div className="flex flex-col md:flex-row justify-center items-center gap-12">
                 <div className="flex flex-col items-center">
-                  <img
-                    src="/logo_fatec.jpg"
-                    alt="Fatec"
-                    className="h-24 object-contain mb-2"
-                  />
+                  <img src="/logo_fatec.jpg" alt="Fatec" className="h-24 object-contain mb-2" />
                   <p className="text-sm md:text-base text-center font-semibold text-neutral-300">
                     Formado em Gestão da<br />Tecnologia da Informação
                   </p>
                 </div>
-
                 <div className="flex flex-col items-center">
-                  <img
-                    src="/logo_puc.jpg"
-                    alt="PUC Minas"
-                    className="h-24 object-contain mb-2"
-                  />
+                  <img src="/logo_puc.jpg" alt="PUC Minas" className="h-24 object-contain mb-2" />
                   <p className="text-sm md:text-base text-center font-semibold text-neutral-300">
                     Especialização em Engenharia<br />de Dados
                   </p>
@@ -147,6 +156,7 @@ export default function BIPortfolioPage() {
               </div>
             </section>
           </div>
+
         </section>
       </main>
     </div>
